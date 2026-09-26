@@ -1,3 +1,4 @@
+import asyncio
 import pygame
 import random
 import sys
@@ -76,7 +77,7 @@ def draw_particles(particles):
                 
         pygame.draw.circle(screen, color, (int(particle['x']), int(particle['y'])), int(particle['size']))
 
-def main():
+async def main():
     clock = pygame.time.Clock()
         
     while True: # Main Application Wrapper
@@ -207,17 +208,14 @@ def main():
                         
             pygame.display.flip()
             clock.tick(60)
+            await asyncio.sleep(0)
 
         # --- Post-Collision Game Over Loop ---
         if died_by_collision:
             start_time = pygame.time.get_ticks()
             waiting_for_input = True
-            
+
             while waiting_for_input:
-                if pygame.time.get_ticks() - start_time > 3000:
-                    pygame.quit()
-                    sys.exit()
-                                    
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
@@ -246,6 +244,7 @@ def main():
                 screen.blit(restart_surface, restart_rect)                                
                 pygame.display.flip()
                 clock.tick(60)
-
+                await asyncio.sleep(0)
+                
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
