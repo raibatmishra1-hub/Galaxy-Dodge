@@ -6,7 +6,7 @@ space shooter game instructions below:
 
 ### instructions
 
-<https://google.com>
+
 
 **_1_**. load the project
 
