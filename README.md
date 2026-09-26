@@ -6,4 +6,4 @@
 - spacebar to shoot the rockets down.
 - if you hit the rockets it's:
 
-- __________GAME OVER__________
+- `__________GAME OVER__________`
