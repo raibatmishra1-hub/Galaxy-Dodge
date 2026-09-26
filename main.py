@@ -33,18 +33,18 @@ ORANGE_RED = (255, 69, 0)
 LASER_GREEN = (0, 255, 100)
 
 # 3. Load and Scale Game Assets
-bg = pygame.transform.scale(pygame.image.load('STARS.png'), (WIDTH, HEIGHT))
+bg = pygame.transform.scale(pygame.image.load('./images/STARS.png'), (WIDTH, HEIGHT))
 
-player_img = pygame.image.load('SS.png')
+player_img = pygame.image.load('./images/SS.png')
 player_img = pygame.transform.scale(player_img, (PLAYER_WIDTH, PLAYER_HEIGHT))
 
-enemy_img = pygame.image.load('enemey.png')
+enemy_img = pygame.image.load('./images/enemey.png')
 enemy_img = pygame.transform.scale(enemy_img, (ENEMY_WIDTH, ENEMY_HEIGHT))
 
 # Audio Setup
-pygame.mixer.music.load('bg_music.wav')
-kaboom_sound = pygame.mixer.Sound('kaboom.wav')
-laser_sound = pygame.mixer.Sound('laser.wav')  
+pygame.mixer.music.load('./audio/bg_music.ogg')
+kaboom_sound = pygame.mixer.Sound('./audio/kaboom.ogg')
+laser_sound = pygame.mixer.Sound('./audio/laser.ogg')  
 
 # Typography Setup
 game_over_font = pygame.font.SysFont('Arial', 80, bold=True)
